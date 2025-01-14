@@ -16,9 +16,6 @@ Welcome to the Cinema Booking Web Application repository! This web application w
 - **HTML/CSS/JavaScript:** 🖥️ Frontend technologies for building the user interface.
 - **Bootstrap:** 📱 Frontend framework for designing responsive and mobile-first websites.
 
-## DEMO 🎬
-
-Explore the application in action by watching the video demonstration available on [YouTube](https://youtu.be/md3oHAhkOto).
 
 ## INSTALLATION ⚙️
 
@@ -44,10 +41,4 @@ Contributions are welcome! If you'd like to contribute to the project, please fo
 5. ⏫ Push to the branch (`git push origin feature/my-new-feature`).
 6. 📬 Create a new Pull Request.
 
-## LICENSE 📄
 
-This project is licensed under the [MIT License](LICENSE).
-
-## CONTACT 📧
-
-For any inquiries or feedback, feel free to reach out to me at [contact@aimanecouissi.com](mailto:contact@aimanecouissi.com).
