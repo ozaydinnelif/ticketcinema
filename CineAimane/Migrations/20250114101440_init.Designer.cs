@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CineAimane.Migrations
 {
     [DbContext(typeof(CineAimaneDbContext))]
-    [Migration("20230118212322_CineAimaneMigration14")]
-    partial class CineAimaneMigration14
+    [Migration("20250114101440_init")]
+    partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -192,8 +192,8 @@ namespace CineAimane.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "ecee7176-9f65-468a-a0e0-544543ccf605",
-                            ConcurrencyStamp = "f6f16544-b679-48ed-8513-d3d960d9507c",
+                            Id = "77b56a16-5a77-419a-8b63-38a6b8a3e02f",
+                            ConcurrencyStamp = "6d2b1530-ac10-47cf-bddb-7694a7205e52",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         });
@@ -291,17 +291,17 @@ namespace CineAimane.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "1beea0be-b9a4-4f10-aeb1-8df3cafa6627",
+                            Id = "ada42ffc-6c51-4618-9cb3-198ffc000f62",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "f3e57121-53cc-43fb-b4de-196b93964b2a",
+                            ConcurrencyStamp = "392e6163-50c2-4e1a-b4ed-5b247f19b920",
                             Email = "aimanecouissi@gmail.com",
                             EmailConfirmed = true,
                             LockoutEnabled = true,
                             NormalizedEmail = "AIMANECOUISSI@GMAIL.COM",
                             NormalizedUserName = "AIMANECOUISSI",
-                            PasswordHash = "AQAAAAEAACcQAAAAEAKYkGvyrL3xSojbKCgWLskQ18U7vwfdqN87/0iouMCodG1uYPkIyG7ZtNFg337Q0g==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEKFPdZztxtBeixhGFYrBry3ycOCQM8f1k3lYHDHk4VFwy6BrvlGy5YDWlAAs7qv4WQ==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "14d7aecd-4bca-4688-b2e4-991cee48c967",
+                            SecurityStamp = "5be54f39-bd8f-4e25-8c37-4e3000befe9d",
                             TwoFactorEnabled = false,
                             UserName = "aimanecouissi"
                         });
@@ -371,8 +371,8 @@ namespace CineAimane.Migrations
                     b.HasData(
                         new
                         {
-                            UserId = "1beea0be-b9a4-4f10-aeb1-8df3cafa6627",
-                            RoleId = "ecee7176-9f65-468a-a0e0-544543ccf605"
+                            UserId = "ada42ffc-6c51-4618-9cb3-198ffc000f62",
+                            RoleId = "77b56a16-5a77-419a-8b63-38a6b8a3e02f"
                         });
                 });
 

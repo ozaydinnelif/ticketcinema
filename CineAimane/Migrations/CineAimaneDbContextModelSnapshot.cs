@@ -4,7 +4,6 @@ using CineAimane.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -12,10 +11,9 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CineAimane.Migrations
 {
     [DbContext(typeof(CineAimaneDbContext))]
-    [Migration("20221214160744_CineAimaneMigration5")]
-    partial class CineAimaneMigration5
+    partial class CineAimaneDbContextModelSnapshot : ModelSnapshot
     {
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -24,7 +22,7 @@ namespace CineAimane.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
-            modelBuilder.Entity("CineAimane.Models.MovieModel", b =>
+            modelBuilder.Entity("CineAimane.Models.Movie", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -69,10 +67,6 @@ namespace CineAimane.Migrations
                     b.Property<DateTime>("ReleaseDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("Showtimes")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<DateTime>("StartDate")
                         .HasColumnType("datetime2");
 
@@ -87,6 +81,84 @@ namespace CineAimane.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Movies");
+                });
+
+            modelBuilder.Entity("CineAimane.Models.Reservation", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("LastName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("ShowdateId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ShowdateId");
+
+                    b.ToTable("Reservations");
+                });
+
+            modelBuilder.Entity("CineAimane.Models.Showdate", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("Reserved")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ShowtimeId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ShowtimeId");
+
+                    b.ToTable("Showdates");
+                });
+
+            modelBuilder.Entity("CineAimane.Models.Showtime", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("MovieId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Time")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("MovieId");
+
+                    b.ToTable("Showtimes");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -114,6 +186,15 @@ namespace CineAimane.Migrations
                         .HasFilter("[NormalizedName] IS NOT NULL");
 
                     b.ToTable("AspNetRoles", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "77b56a16-5a77-419a-8b63-38a6b8a3e02f",
+                            ConcurrencyStamp = "6d2b1530-ac10-47cf-bddb-7694a7205e52",
+                            Name = "Admin",
+                            NormalizedName = "ADMIN"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -208,17 +289,17 @@ namespace CineAimane.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "74f2e3ea-68d8-48f9-b9a3-5df5683fed98",
+                            Id = "ada42ffc-6c51-4618-9cb3-198ffc000f62",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "6a4247c3-75de-493a-9a43-b96daa4a757f",
-                            Email = "aimanecouissi@cineaimane.com",
+                            ConcurrencyStamp = "392e6163-50c2-4e1a-b4ed-5b247f19b920",
+                            Email = "aimanecouissi@gmail.com",
                             EmailConfirmed = true,
-                            LockoutEnabled = false,
-                            NormalizedEmail = "AIMANECOUISSI@CINEAIMANE.COM",
+                            LockoutEnabled = true,
+                            NormalizedEmail = "AIMANECOUISSI@GMAIL.COM",
                             NormalizedUserName = "AIMANECOUISSI",
-                            PasswordHash = "AQAAAAEAACcQAAAAEC+I53MQDHextJ5R61gfIVVMr+1tYRdGfH98UyKaI3dpmsAFPE6yvXl7zozE9+XuYA==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEKFPdZztxtBeixhGFYrBry3ycOCQM8f1k3lYHDHk4VFwy6BrvlGy5YDWlAAs7qv4WQ==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "a8dd519c-e980-4c93-8f16-7a98757b2fc1",
+                            SecurityStamp = "5be54f39-bd8f-4e25-8c37-4e3000befe9d",
                             TwoFactorEnabled = false,
                             UserName = "aimanecouissi"
                         });
@@ -252,12 +333,10 @@ namespace CineAimane.Migrations
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
                     b.Property<string>("LoginProvider")
-                        .HasMaxLength(128)
-                        .HasColumnType("nvarchar(128)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("ProviderKey")
-                        .HasMaxLength(128)
-                        .HasColumnType("nvarchar(128)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("ProviderDisplayName")
                         .HasColumnType("nvarchar(max)");
@@ -286,6 +365,13 @@ namespace CineAimane.Migrations
                     b.HasIndex("RoleId");
 
                     b.ToTable("AspNetUserRoles", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            UserId = "ada42ffc-6c51-4618-9cb3-198ffc000f62",
+                            RoleId = "77b56a16-5a77-419a-8b63-38a6b8a3e02f"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
@@ -294,12 +380,10 @@ namespace CineAimane.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("LoginProvider")
-                        .HasMaxLength(128)
-                        .HasColumnType("nvarchar(128)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Name")
-                        .HasMaxLength(128)
-                        .HasColumnType("nvarchar(128)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Value")
                         .HasColumnType("nvarchar(max)");
@@ -307,6 +391,39 @@ namespace CineAimane.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens", (string)null);
+                });
+
+            modelBuilder.Entity("CineAimane.Models.Reservation", b =>
+                {
+                    b.HasOne("CineAimane.Models.Showdate", "Showdate")
+                        .WithMany("Reservations")
+                        .HasForeignKey("ShowdateId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Showdate");
+                });
+
+            modelBuilder.Entity("CineAimane.Models.Showdate", b =>
+                {
+                    b.HasOne("CineAimane.Models.Showtime", "Showtime")
+                        .WithMany("Showdates")
+                        .HasForeignKey("ShowtimeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Showtime");
+                });
+
+            modelBuilder.Entity("CineAimane.Models.Showtime", b =>
+                {
+                    b.HasOne("CineAimane.Models.Movie", "Movie")
+                        .WithMany("Showtimes")
+                        .HasForeignKey("MovieId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Movie");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -358,6 +475,21 @@ namespace CineAimane.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("CineAimane.Models.Movie", b =>
+                {
+                    b.Navigation("Showtimes");
+                });
+
+            modelBuilder.Entity("CineAimane.Models.Showdate", b =>
+                {
+                    b.Navigation("Reservations");
+                });
+
+            modelBuilder.Entity("CineAimane.Models.Showtime", b =>
+                {
+                    b.Navigation("Showdates");
                 });
 #pragma warning restore 612, 618
         }
