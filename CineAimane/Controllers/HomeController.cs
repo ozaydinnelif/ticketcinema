@@ -103,8 +103,11 @@ namespace CineAimane.Controllers
                         },
                     },
                     Mode = "payment",
-                    SuccessUrl = "https://localhost:44390/Home/Ticket",
-                    CancelUrl = "https://localhost:44390/Home/Movie/" + _context.Showtimes.Find(HttpContext.Session.GetInt32("ShowtimeId"))?.MovieId,
+
+                    SuccessUrl = "https://localhost:44384/Home/Ticket",
+                    CancelUrl = "https://localhost:44384/Home/Movie/" + _context.Showtimes.Find(HttpContext.Session.GetInt32("ShowtimeId"))?.MovieId
+                    //SuccessUrl = "https://localhost:44390/Home/Ticket",
+                    //CancelUrl = "https://localhost:44390/Home/Movie/" + _context.Showtimes.Find(HttpContext.Session.GetInt32("ShowtimeId"))?.MovieId,
                 };
                 var service = new SessionService();
                 Session session = service.Create(options);
