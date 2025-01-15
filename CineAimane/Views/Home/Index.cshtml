@@ -19,9 +19,9 @@
 						<div class="container">
 							<div class="row">
 								<div class="col-lg-6 text-center text-lg-start text-white">
-									<h5 class="fw-semibold text-uppercase">Now Playing</h5>
+									<h5 class="fw-semibold text-uppercase">Şuan Oynatılıyor</h5>
 									<h1 class="display-4 fw-bold text-uppercase mb-4">@movie.Title</h1>
-									<button href="@movie.Trailer" class="btn btn-clear text-uppercase fw-semibold me-2 py-2 px-4" data-fancybox><i class="fa-solid fa-play me-2"></i>Play Trailer</button>
+									<button href="@movie.Trailer" class="btn btn-clear text-uppercase fw-semibold me-2 py-2 px-4" data-fancybox><i class="fa-solid fa-play me-2"></i>Fragmanı Oynat</button>
 								</div>
 							</div>
 						</div>
@@ -39,7 +39,7 @@
 <section id="movies" class="pt-5">
 	<div class="container">
 		<div class="section-title d-flex align-items-center gap-4 mb-3">
-			<h2 class="text-uppercase fw-bold flex-shrink-0 mb-0">Now Playing</h2>
+			<h2 class="text-uppercase fw-bold flex-shrink-0 mb-0">Şimdi oynuyor</h2>
 			<div class="line"></div>
 		</div>
 		@if (ViewBag.NowPlaying.Count == 0)
@@ -47,7 +47,7 @@
 			<div class="row justify-content-center mt-4">
 				<div class="col-12">
 					<div class="alert alert-primary fw-medium rounded-1" role="alert">
-						There are no movies playing right now
+						Şu anda oynatılan film yok!
 					</div>
 				</div>
 			</div>
@@ -75,7 +75,7 @@
 <section id="coming" class="pt-5">
 	<div class="container">
 		<div class="section-title d-flex align-items-center gap-4 mb-3">
-			<h2 class="text-uppercase fw-bold flex-shrink-0 mb-0">Coming Soon</h2>
+			<h2 class="text-uppercase fw-bold flex-shrink-0 mb-0">Yakında sinemalarda!</h2>
 			<div class="line"></div>
 		</div>
 		@if (ViewBag.ComingSoon.Count == 0)
@@ -83,7 +83,7 @@
 			<div class="row justify-content-center mt-4">
 				<div class="col-12">
 					<div class="alert alert-primary fw-medium rounded-1" role="alert">
-						There are no movies coming soon right now
+						Şu anda yakında film yok!
 					</div>
 				</div>
 			</div>
@@ -111,7 +111,7 @@
 <section id="prices" class="pt-5">
 	<div class="container">
 		<div class="section-title d-flex align-items-center gap-4 mb-3">
-			<h2 class="text-uppercase fw-bold flex-shrink-0 mb-0">Ticket Prices</h2>
+			<h2 class="text-uppercase fw-bold flex-shrink-0 mb-0">Bilet Fiyatları</h2>
 			<div class="line"></div>
 		</div>
 		<div class="row mt-4">
@@ -119,27 +119,27 @@
 				<div class="prices-table rounded-1">
 					<table>
 						<tr>
-							<th>Ticket Type</th>
-							<th>Price</th>
+							<th>Bilet Türü</th>
+							<th>Fiyat</th>
 						</tr>
 						<tr>
-							<td>Child (-12 year)</td>
+							<td>Çocuk (12 yaşına kadar)</td>
 							<td>$4.50</td>
 						</tr>
 						<tr>
-							<td>Student</td>
+							<td>Öğrenci</td>
 							<td>$5.00</td>
 						</tr>
 						<tr>
-							<td>Before 04:00 PM</td>
+							<td>Saat 4.00 den önce</td>
 							<td>$5.50</td>
 						</tr>
 						<tr>
-							<td>After 04:00 PM</td>
+							<td>Saat 4.00 den sonra</td>
 							<td>$6.50</td>
 						</tr>
 						<tr>
-							<td>VIP Seat</td>
+							<td>VIP Koltuk</td>
 							<td>$1.00</td>
 						</tr>
 					</table>
@@ -151,7 +151,7 @@
 <section id="contact" class="py-5" style="padding-bottom: 110px !important;">
 	<div class="container">
 		<div class="section-title d-flex align-items-center gap-4 mb-3">
-			<h2 class="text-uppercase fw-bold flex-shrink-0 mb-0">Contact Us</h2>
+			<h2 class="text-uppercase fw-bold flex-shrink-0 mb-0">İletişime Geçin</h2>
 			<div class="line"></div>
 		</div>
 		<div class="row mt-4 g-3">

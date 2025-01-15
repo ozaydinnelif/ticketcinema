@@ -22,7 +22,7 @@
 						</div>
 					}
 					<div class="mb-3">
-						<label asp-for="Username" class="form-label fw-semibold">Username</label>
+						<label asp-for="Username" class="form-label fw-semibold">Kullanıcı Adı</label>
 						<div class="position-relative">
 							<input type="text" asp-for="Username" class="form-control form-control-lg" disabled>
 							<div class="form-control-icon">
@@ -32,7 +32,7 @@
 						<span asp-validation-for="Username" class="text-danger d-block mt-2"></span>
 					</div>
 					<div class="mb-3">
-						<label asp-for="Email" class="form-label fw-semibold">Email address</label>
+						<label asp-for="Email" class="form-label fw-semibold">Email adres</label>
 						<div class="position-relative">
 							<input type="email" asp-for="Email" class="form-control form-control-lg" disabled>
 							<div class="form-control-icon">
@@ -42,7 +42,7 @@
 						<span asp-validation-for="Email" class="text-danger d-block mt-2"></span>
 					</div>
 					<div class="mb-3">
-						<label asp-for="CurrentPassword" class="form-label fw-semibold">Current password <span class="text-danger">*</span></label>
+						<label asp-for="CurrentPassword" class="form-label fw-semibold">Şifre <span class="text-danger">*</span></label>
 						<div class="position-relative">
 							<input type="password" asp-for="CurrentPassword" class="form-control form-control-lg" placeholder="Enter password here">
 							<div class="form-control-icon">
@@ -52,7 +52,7 @@
 						<span asp-validation-for="CurrentPassword" class="text-danger d-block mt-2"></span>
 					</div>
 					<div class="mb-3">
-						<label asp-for="NewPassword" class="form-label fw-semibold">New password <span class="text-danger">*</span></label>
+						<label asp-for="NewPassword" class="form-label fw-semibold">Yeni Şifre <span class="text-danger">*</span></label>
 						<div class="position-relative">
 							<input type="password" asp-for="NewPassword" class="form-control form-control-lg" placeholder="Enter new password here">
 							<div class="form-control-icon">
@@ -62,7 +62,7 @@
 						<span asp-validation-for="NewPassword" class="text-danger mt-2 d-block"></span>
 					</div>
 					<div class="mb-3">
-						<label asp-for="ConfirmNewPassword" class="form-label fw-semibold">Confirm new password <span class="text-danger">*</span></label>
+						<label asp-for="ConfirmNewPassword" class="form-label fw-semibold">Yeni şifreyi onayla <span class="text-danger">*</span></label>
 						<div class="position-relative">
 							<input type="password" asp-for="ConfirmNewPassword" class="form-control form-control-lg" placeholder="Confirm new password here">
 							<div class="form-control-icon">
@@ -72,7 +72,7 @@
 						<span asp-validation-for="ConfirmNewPassword" class="text-danger mt-2 d-block"></span>
 					</div>
 					<div class="d-grid">
-						<button type="submit" class="btn btn-lg btn-block btn-primary text-uppercase fw-semibold">Save</button>
+						<button type="submit" class="btn btn-lg btn-block btn-primary text-uppercase fw-semibold">Kaydet</button>
 					</div>
 				</form>
 			</div>
